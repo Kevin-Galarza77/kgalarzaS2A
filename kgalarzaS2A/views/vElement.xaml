@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kgalarzaS2A.views.vElement"
+             Title="vElement">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
+        
+        <Label 
+            Text="Semana 2 - Elementos GUI" 
+            TextColor="White"
+            FontSize="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            />
+
+        <Picker
+            x:Name="countryPicker"
+            Title="Countries">
+
+            <Picker.Items>
+                <x:String>Ecuador</x:String>
+                <x:String>Peru</x:String>
+                <x:String>Colombia</x:String>
+                <x:String>Argentina</x:String>
+                <x:String>Brasil</x:String>
+            </Picker.Items>
+            
+        </Picker>
+
+        <FlexLayout
+                Direction="Row"
+                Wrap="Wrap"
+                JustifyContent="Start"
+                AlignItems="Start"
+                Padding="20"
+                BindableLayout.ItemsSource="{Binding MyItems}">
+            
+            <HorizontalStackLayout 
+                Padding="20"
+                Spacing="20"
+                >
+                <Label Text="Desde" FontAttributes="Bold" />
+                <DatePicker x:Name="datePickerDesde" Format="yyyy/MM/dd" />
+            </HorizontalStackLayout> 
+            
+            <HorizontalStackLayout 
+                Padding="20"
+                Spacing="20"
+                >
+                <Label Text="Hasta" FontAttributes="Bold" />
+                <DatePicker x:Name="datePickerHasta" Format="yyyy/MM/dd" />
+            </HorizontalStackLayout>
+
+        </FlexLayout>
+
+        <Button x:Name="countryBtn"
+                Text="Show country"
+                BackgroundColor="Blue"
+                TextColor="White"
+                HorizontalOptions="Center"
+                Clicked="countryBtn_Clicked"
+                >
+
+        </Button>
+
+    </VerticalStackLayout>
+</ContentPage>
